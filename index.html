@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header>
+        <a href="#" class="logo">Logo</a>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#course" >Infomation</a></li>
+                <li><a href="#review" >review</a></li>
+                <li><a href="#contact" >Contact</a></li>
+            </ul>
+            
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>blue screen errors</h1>
+            <p>We help you solve the most frequent blue screen errors</p>
+            <a href="#"><button>More information</button></a>
+        </div>
+    </section>
+
+
+    <section class="product" id="product">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Mistakes</h3>
+                <p>Here we will provide you with the most frequent errors</p>
+            </div>
+
+            <div class="box">
+                <h3>Causes</h3>
+                <p>We show you the causes of the problem</p>
+            </div>
+
+            <div class="box">
+                <h3>Solutions</h3>
+                <p>We show you the solutions to the error</p>
+            </div>
+
+        </div>
+
+        <a href="#"><button>More</button></a>
+
+    </section>
+
+
+    <section class="about" id="about">
+
+        <h1 class="heading">About</h1>
+        <div class="row">
+            <div class="image">
+                <img src="images/about.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Blue screen</h3>
+                <p>Blue Screen of Death (BSOD)
+                    The Blue Screen of Death (BSOD) is a critical error that occurs in Windows operating systems when they encounter a fatal error. This screen displays a blue background with white text indicating the nature of the error.</p>
+                <h3>Common causes of BSOD:</h3>
+                <p> -Hardware failure, such as RAM or faulty hard drives.</p>
+                <p> -Driver issues, such as outdated or incompatible drivers.</p>
+                <p> -Software conflicts between incompatible programs.</p>
+                <p> -Overheating of hardware, such as CPU or GPU.</p>
+                <p> -Incompatible or improperly installed Windows updates.</p>
+                <a href="#"><button>Leer mas</button></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="course" id="course">
+
+        <h1 class="heading">Possible solutions:</h1>
+        <h3 class="title">It is important to note that the specific solution for a BSOD may vary depending on the cause of the error and the system configuration. If you continue to experience problems with the Blue Screen of Death, it is recommended to seek help from a qualified computer technician.</h3>
+        <h1 class= "title"></h1>
+        <h1 class= "title">1- Update hardware drivers to the latest versions.</h1>
+        <h1 class= "title">2- Perform hardware diagnostic tests to identify and fix hardware problems..</h1>
+        <h1 class= "title">3- Remove incompatible or conflicting software.</h1>
+        <h1 class= "title">4- Improve system cooling to prevent hardware overheating.</h1>
+        <h1 class= "title">5- Perform a system restore to an earlier point before the error occurred.</h1>
+        <h1 class= "title">6- Run disk check and repair tools to fix errors on the hard disk.</h1>
+        <h1 class= "title">7- In the last case, reinstall Windows to start with a clean system.</h1>
+        </div>
+
+    </section>
+
+       
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading">Contacto</h1>
+        <div class="row">
+            <div class="form-container">
+
+                <form action="">
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Correo">
+                    <input type="number" placeholder="Telefono">
+                    <textarea cols="15" rows="5" placeholder="Mensaje"></textarea >
+                    <input type="submit" value="Enviar">        
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+        <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-reddit"></a>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('.fa-bars').click(function() {
+
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('nav-toggle');
+
+            });
+
+            $(window).on('scroll load', function() {
+
+                $('.fa-bars').removeClass('fa-times');
+                $('.navbar').removeClass('nav-toggle');
+
+                $('section').each(function() {
+
+                    var id = $(this).attr('id');
+                    var height = $(this).height();
+                    var offset = $(this).offset().top -200;
+                    var top = $(window).scrollTop();
+
+                    if(top >= offset && top < offset + height) {
+                        $('.navbar ul li a').removeClass('active');
+                        $('.navbar').find('[href="#'+id+'"]').addClass('active');
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>
